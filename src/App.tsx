@@ -15,9 +15,9 @@ function App() {
   }
   return (
     <div className='d-flex justify-content-center align-items-center' style={{ backgroundColor: '#ffc107', height: '100vh' }}>
-      {/* <button type="button" className="btn btn-light w-25 fs-3 py-4" style={{color: '#ffc107', boxShadow: '0px 0px 15px -6px #000000', fontWeight: '500'}}>Quiz Time</button> */}
+      <button type="button" className="btn btn-light w-25 fs-3 py-4" style={{ color: '#ffc107', boxShadow: '0px 0px 15px -6px #000000', fontWeight: '500' }}>Quiz Time</button>
       {/* <InstructionCard /> */}
-      <QuestionCard />
+      {/* <QuestionCard /> */}
     </div>
   );
 }
