@@ -22,7 +22,7 @@ const QuestionCard = () => {
           <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>1. You'll be given 15 seconds to answer each question</p>
           <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>2. You can no longer change once you've selected an answer.</p>
           <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>3. You can no longer select an answer once the time's up</p>
-          <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>4. You can't exit the Quiz once you've started playing.</p>
+          <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>4. You can't exit the Quiz once while playing.</p>
           <p className="card-text p-3 border border-warning rounded" style={{ backgroundColor: `${color == 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'}` }} onClick={handleOnClick}>5. You'll earn points based on your correct answers.</p>
         </div>
         <div className='card-footer d-flex justify-content-end'>
