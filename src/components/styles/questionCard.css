@@ -1,7 +1,12 @@
-p:hover {
+/* button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
     background-color: rgba(255, 193, 7, 0.247) !important;
 }
-p:active {
+
+button:active {
     background-color: rgba(255, 7, 7, 0.247) !important;
     border-color: rgba(255, 7, 7, 0.247) !important;
-}
+} */

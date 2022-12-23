@@ -1,5 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../Poppins/Poppins-Medium.ttf');
+}
 
 * {
     font-family: 'Poppins';
+    color: black;
 }
+
+.correct {
+    background-color: rgba(23, 255, 7, 0.247) !important;
+    border-color: rgba(48, 255, 7, 0.247) !important;
+}
+
+.incorrect {
+    background-color: rgba(255, 7, 7, 0.247) !important;
+    border-color: rgba(255, 7, 7, 0.247) !important;
+}
+
+
+/* style={{ backgroundColor: `${color === 'red' ? 'rgba(255, 7, 7, 0.247)' : 'rgba(255, 193, 7, 0.13)'} */
