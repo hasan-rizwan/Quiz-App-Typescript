@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './styles/questionCard.css'
 import { AnswerState } from '../App'
 
