@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.css"
 import './app.css'
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from "./components/Api";
@@ -25,7 +24,7 @@ type routeState = {
   scoreCard: boolean
 }
 
-const TOTAL_QUESTIONS = 2;
+const TOTAL_QUESTIONS = 10;
 
 // Types End
 
@@ -43,6 +42,7 @@ function App() {
   const [score, setScore] = useState<number>(0);
   const [userClicked, setUserClicked] = useState<boolean>(false);
   const [userAnswers, setUserAnswers] = useState<AnswerState[]>([]);
+  const [bgColor, setBgColor] = useState<string>('#ffc107');
 
   // States End
 
@@ -77,11 +77,6 @@ function App() {
     setScore(0);
     setUserAnswers([]);
     setLoading(false);
-    // console.log('New Questions: ', newQuestions);
-    // try {
-    // } catch (error: any) {
-    //   console.log("ERROR: ", error.msg);
-    // }
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -90,11 +85,15 @@ function App() {
       const answer = e.currentTarget.title;
       // Check user-answer against correct answer
       const correct = questions[number].correct_answer === answer;
-      console.log('correctttttt VARIABLE : ', correct);
       // Add score if answer is correct
       if (correct) {
         setScore(prev => prev + 1);
-      };
+        // Change bg-color
+        setBgColor('green');
+      }
+      else {
+        setBgColor('darkred');
+      }
       // Save user-answer in array
       const answerState = {
         question: questions[number].question,
@@ -102,6 +101,7 @@ function App() {
         correct,
         correctAnswer: questions[number].correct_answer
       }
+
       setUserClicked(true);
       return setUserAnswers(prev => [...prev, answerState]);
     }
@@ -112,10 +112,12 @@ function App() {
     setUserClicked(false);
     // Logic to go to next question
     setNumber(number + 1);
+    // empty bgColor state
+    setBgColor('#ffc107');
   }
 
   return (
-    <div className='d-flex justify-content-center align-items-center' style={{ backgroundColor: '#ffc107', height: '100vh' }}>
+    <div className='d-flex justify-content-center align-items-center' style={{ backgroundColor: `${bgColor}`, height: '100vh' }}>
       {
         route.startButton &&
         <button type="button" className="btn btn-light w-25 fs-3 py-4" style={{ backgroundColor: '#fff', color: '#ffc107', boxShadow: '0px 0px 15px -6px #000000', fontWeight: '500' }} onClick={() => { startTrivia(); routeHandler(false, true, false, false); }}>Quiz Time</button>
@@ -133,11 +135,11 @@ function App() {
       }
       {
         route.questionCard &&
-        <QuestionCard routeHandler={routeHandler} totalQuestions={TOTAL_QUESTIONS} questionNum={number + 1} question={questions[number].question} answers={questions[number].answers} userAnswers={userAnswers ? userAnswers[number] : undefined} userClicked={userClicked} callback={checkAnswer} nextQuestion={nextQuestion} />
+        <QuestionCard routeHandler={routeHandler} TOTAL_QUESTIONS={TOTAL_QUESTIONS} questionNum={number + 1} question={questions[number].question} answers={questions[number].answers} userAnswers={userAnswers ? userAnswers[number] : undefined} userClicked={userClicked} callback={checkAnswer} nextQuestion={nextQuestion} />
       }
       {
         route.scoreCard &&
-        <ScoreCard score={score} routeHandler={routeHandler} TOTAL_QUESTIONS={TOTAL_QUESTIONS} />
+        <ScoreCard routeHandler={routeHandler} score={score} TOTAL_QUESTIONS={TOTAL_QUESTIONS} />
       }
     </div >
   );
