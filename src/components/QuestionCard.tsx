@@ -20,7 +20,6 @@ const QuestionCard: React.FC<Props> = ({ question, answers, callback, userClicke
       <div className="card-header border-0 fs-5 fw-bold w-100">
         Quiz Application
       </div>
-
       <div className="card-body">
         <div className="card-title fs-5 fw-semibold" style={{ maxHeight: '7rem', userSelect: 'none' }} dangerouslySetInnerHTML={{ __html: question }} />
         {answers.map(answer => (
