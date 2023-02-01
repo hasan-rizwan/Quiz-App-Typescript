@@ -120,7 +120,7 @@ function App() {
     <div className='d-flex justify-content-center align-items-center' style={{ backgroundColor: `${bgColor}`, height: '100vh' }}>
       {
         route.startButton &&
-        <button type="button" className="btn btn-light w-25 fs-3 py-4" style={{ backgroundColor: '#fff', color: '#ffc107', boxShadow: '0px 0px 15px -6px #000000', fontWeight: '500' }} onClick={() => { startTrivia(); routeHandler(false, true, false, false); }}>Quiz Time</button>
+        <button type="button" className="btn btn-light w-25 fs-3 py-4" style={{ minWidth: '15rem', backgroundColor: '#fff', color: '#ffc107', boxShadow: '0px 0px 15px -6px #000000', fontWeight: '500' }} onClick={() => { startTrivia(); routeHandler(false, true, false, false); }}>Quiz Time</button>
       }
       {
         loading &&
